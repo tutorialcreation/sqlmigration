@@ -63,8 +63,16 @@ WSGI_APPLICATION = 'api.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+if DEBUG:
+    DATABASES={
+        'default':{
+            'ENGINE':'django.db.backends.sqlite3',
+            'NAME':BASE_DIR/'traffic.db',
+        }
+    }
+else:
+    DATABASES = {}
+    DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 # Password validation
