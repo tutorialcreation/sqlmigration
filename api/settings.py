@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--d@+=jc^uf-vzd(esuxdk69a+p%8gbr#_q2m8n4d^3p^r%cve4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 2
 
 ALLOWED_HOSTS = ['*']
 
@@ -63,14 +63,27 @@ WSGI_APPLICATION = 'api.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-if DEBUG:
+if DEBUG==True:
     DATABASES={
         'default':{
             'ENGINE':'django.db.backends.sqlite3',
             'NAME':BASE_DIR/'traffic.db',
+            
         }
     }
-else:
+elif DEBUG==2:
+    DATABASES={
+        'default':{
+            'ENGINE': 'django.db.backends.mysql',  
+            'NAME': 'traffix',  
+            'USER': 'root',  
+            'PASSWORD': 'Luther1996-',  
+            'HOST': '127.0.0.1',  
+            'PORT': '3306',  
+            
+        }
+    }
+elif DEBUG==False:
     DATABASES = {}
     DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
