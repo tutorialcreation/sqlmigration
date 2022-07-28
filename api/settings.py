@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+from pickle import TRUE
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -13,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--d@+=jc^uf-vzd(esuxdk69a+p%8gbr#_q2m8n4d^3p^r%cve4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 3
+DEBUG = TRUE
 
 ALLOWED_HOSTS = ['*']
 
@@ -64,26 +65,6 @@ WSGI_APPLICATION = 'api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 if DEBUG==True:
-    DATABASES={
-        'default':{
-            'ENGINE':'django.db.backends.sqlite3',
-            'NAME':BASE_DIR/'traffic.db',
-            
-        }
-    }
-elif DEBUG==2:
-    DATABASES={
-        'default':{
-            'ENGINE': 'django.db.backends.mysql',  
-            'NAME': 'traffix',  
-            'USER': 'root',  
-            'PASSWORD': 'Luther1996-',  
-            'HOST': '127.0.0.1',  
-            'PORT': '3306',  
-            
-        }
-    }
-elif DEBUG==3:
     DATABASES = {
         'default': {
             'ENGINE': 'mssql',
@@ -101,7 +82,7 @@ elif DEBUG==3:
     # set this to False if you want to turn off pyodbc's connection pooling
     DATABASE_CONNECTION_POOLING = False
 
-elif DEBUG==False:
+else:
     DATABASES = {}
     DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
