@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--d@+=jc^uf-vzd(esuxdk69a+p%8gbr#_q2m8n4d^3p^r%cve4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 2
+DEBUG = 3
 
 ALLOWED_HOSTS = ['*']
 
@@ -83,6 +83,25 @@ elif DEBUG==2:
             
         }
     }
+elif DEBUG==3:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'mssql',
+            'NAME': 'traffic',
+            'USER': 'sa',
+            'PASSWORD': 'luther1996-',
+            'HOST': 'localhost',
+            'PORT': '1433',
+
+            # 'OPTIONS': {
+            #     'driver': 'ODBC Driver 17 for SQL Server',
+            # },
+        },
+    }
+
+    # set this to False if you want to turn off pyodbc's connection pooling
+    DATABASE_CONNECTION_POOLING = False
+
 elif DEBUG==False:
     DATABASES = {}
     DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
