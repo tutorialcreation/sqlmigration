@@ -87,16 +87,15 @@ elif DEBUG==3:
     DATABASES = {
         'default': {
             'ENGINE': 'mssql',
-            'NAME': 'traffic',
-            'USER': 'sa',
-            'PASSWORD': 'luther1996-',
-            'HOST': 'localhost',
+            'NAME': os.getenv("DB_NAME"),
+            'HOST': os.getenv("DB_SERVER"),
             'PORT': '1433',
-
-            # 'OPTIONS': {
-            #     'driver': 'ODBC Driver 17 for SQL Server',
-            # },
-        },
+            'USER': os.getenv("DB_USER"),
+            'PASSWORD': os.getenv("DB_PASSWORD"),
+            'OPTIONS': {
+                    'driver': 'ODBC Driver 17 for SQL Server',
+                },
+        }
     }
 
     # set this to False if you want to turn off pyodbc's connection pooling
