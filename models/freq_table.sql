@@ -1,0 +1,1 @@
+select count(*) as [c_freq],endpoints_trafficinfo.type from endpoints_trafficinfo group by endpoints_trafficinfo.type;
