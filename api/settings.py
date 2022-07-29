@@ -1,6 +1,6 @@
 from pathlib import Path
 import os
-from pickle import TRUE
+from pickle import FALSE, TRUE
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--d@+=jc^uf-vzd(esuxdk69a+p%8gbr#_q2m8n4d^3p^r%cve4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = TRUE
+DEBUG = 0
 
 ALLOWED_HOSTS = ['*']
 
