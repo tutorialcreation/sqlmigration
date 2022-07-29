@@ -1,1 +1,0 @@
-select type,count(*) from endpoints_trafficinfo group by type

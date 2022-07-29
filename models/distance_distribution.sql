@@ -1,1 +1,0 @@
-select traveled_d,count(*) from endpoints_trafficinfo group by traveled_d
