@@ -64,18 +64,19 @@ WSGI_APPLICATION = 'api.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-if DEBUG==True:
+if DEBUG:
     DATABASES = {
         'default': {
-            'ENGINE': 'mssql',
+            'ENGINE': 'sql_server.pyodbc',
             'NAME': os.getenv("DB_NAME"),
             'HOST': os.getenv("DB_SERVER"),
             'PORT': '1433',
             'USER': os.getenv("DB_USER"),
             'PASSWORD': os.getenv("DB_PASSWORD"),
             'OPTIONS': {
-                    'driver': 'ODBC Driver 17 for SQL Server',
-                },
+            		'driver': 'ODBC Driver 17 for SQL Server',
+            		'unicode_results': True,
+        	},
         }
     }
 
