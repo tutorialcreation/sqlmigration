@@ -1,11 +1,17 @@
-# trafficELT
+# Sql Migration
 A pipeline for transforming Extracting, Loading and Transforming data to businesses
+“The only constant thing in life is change”.  ~Heraclitus
+Or more radically:
+“When you are finished changing, you are finished.” ~Benjamin Franklin
+With the current speed of new innovations in the data space, building modular, loosely coupled, and programmatically adaptable solutions for your tech stack is essential to move fast and deliver value to your stakeholders. 
+In this case, your AI startup has gotten some sales, some revenue, and some publicity = traction.  This has led to you getting an investor, with some tech background.  Your investor is insisting that a new, more scalable, tech-stack be deployed as a condition for the 2nd tranche of her investment into your firm.
+
 
 <p align="center">
-  <h3 align="center">Data Engineering Sensor Data</h3>
+  <h3 align="center">Sql Migration Project</h3>
 
   <p align="center">
-    A fully dockerized ELT pipeline project, using PostgreSQL, dbt, Apache Airflow, and Redash.
+    A fully dockerized ELT pipeline project, using Microsoft SQL, dbt, Apache Airflow, and Apache Superset.
     <br />
     <a href="#"><strong>Explore the docs »</strong></a>
     <br />
@@ -53,10 +59,10 @@ Using a docker-compose file, developed a completely dockerized ELT pipeline with
 ### Built With
 
 Tech Stack used in this project
-* [PostgreSQL](https://dev.PostgreSQL.com/doc/)
+* [MSSql](https://docs.microsoft.com/en-us/sql/?view=sql-server-ver16)
 * [Apache Airflow](https://airflow.apache.org/docs/apache-airflow/stable/)
 * [dbt](https://docs.getdbt.com/)
-* [Redash](https://redash.io/help/)
+* [Apache Superset](https://superset.apache.org/docs/intro/)
 
 
 <!-- GETTING STARTED -->
@@ -73,7 +79,7 @@ Make sure you have docker installed on local machine.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/tutorialcreation/trafficELT.git
+   git clone https://github.com/tutorialcreation/sqlmigration.git
    ```
 2. Run
    ```sh
