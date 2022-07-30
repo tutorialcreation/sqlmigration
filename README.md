@@ -49,13 +49,9 @@ In this case, your AI startup has gotten some sales, some revenue, and some publ
 
 
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
-![Test Image 4](screenshots/etl_pipeline.png)
 
 
-
-Using a docker-compose file, developed a completely dockerized ELT pipeline with PostgreSQL for data storage, Airflow for automation and orchestration, DBT for data transformation, and a Redash dashboard connected to the PostgreSQL database.
+Using a docker-compose file, developed a completely dockerized ELT pipeline with Microsft SQL for data storage, Airflow for automation and orchestration, DBT for data transformation, and a Redash dashboard connected to the PostgreSQL database.
 ### Built With
 
 Tech Stack used in this project
